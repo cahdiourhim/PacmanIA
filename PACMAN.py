@@ -277,11 +277,14 @@ def Affiche(PacmanColor,message):
    # Afficher le score
    canvas.create_text(screeenWidth // 2, 30, text = f"Score: {score}", fill="yellow", font=PoliceTexte)
 
+  # Afficher le message de pause uniquement si le jeu n'est pas en pause
+   if not PAUSE_FLAG:
+      canvas.create_text(screeenWidth // 2, screenHeight - 50, text="PAUSE : PRESS SPACE", fill="yellow", font=PoliceTexte)
+   else:
+      canvas.create_text(screeenWidth // 2, screenHeight - 50, text="", fill="yellow", font=PoliceTexte)
 
-   # texte  
-   
-   canvas.create_text(screeenWidth // 2, screenHeight- 50 , text = "PAUSE : PRESS SPACE", fill ="yellow", font = PoliceTexte)
-   canvas.create_text(screeenWidth // 2, screenHeight- 20 , text = message, fill ="yellow", font = PoliceTexte)
+   canvas.create_text(screeenWidth // 2, screenHeight - 20, text=message, fill="yellow", font=PoliceTexte)
+
        
  
 AfficherPage(0)
